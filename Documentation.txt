@@ -1,0 +1,5 @@
+            EXTRA POINTS ON MAKING THIS BOT: -
+
+Event - A piece of code that runs when the bot detects a specific activity ahs happened
+Command - It's a piece of code  the bot is triggered when the user asks the bot to trigger it 
+
