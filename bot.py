@@ -36,7 +36,7 @@ async def links(ctx):
 
 @client.command()
 async def team(ctx):
-    await ctx.send('App Development\n``` Jaideep \n Bharghav``` \n Competitive Coding ```\n Sayan``` \n AI/ML ```\n Srinija \n Neeraj``` \n Frontend ```\n Navya \n Madhulika``` \n Content Writting ```\n Nitisha``` \n Public Relation ```\n Manoj```')
+    await ctx.send('App Development\n``` Jaideep \n Bhargav``` \n Competitive Coding ```\n Sayan``` \n AI/ML ```\n Srinija \n Neeraj``` \n Frontend ```\n Navya \n Madhulika``` \n Content Writting ```\n Nitisha``` \n Public Relation ```\n Manoj```')
 
 
 @client.command(aliases=['sayan'])
@@ -81,7 +81,7 @@ async def navya(ctx):
 
 @client.command()
 async def bharxhav(ctx):
-    await ctx.send("```diff\n+ Hi Bharghav here.```")
+    await ctx.send("```diff\n+ Hello there! Bhargav here.```")
     await ctx.send('``` My github : -``` https://github.com/bharxhav')
     await ctx.send('``` LinkedIn here : -``` https://www.linkedin.com/in/bhargavkantheti/')
 
