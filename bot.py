@@ -29,6 +29,17 @@ async def change_status():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(next(status)))
 
 
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Please pass in all required arguements.")
+@client.command()
+async def clear(ctx, amount : int):
+    await ctx.channel.purge(limit = amount)
+@clear.error
+async def clear_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Please pass inan amount to clear the number of data.")
 
 
 @client.command()
