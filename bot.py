@@ -24,9 +24,11 @@ async def on_ready():
     print('Logged in as {0.user}'.format(client))
 
 
+
 @tasks.loop(minutes=30)
 async def change_status():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(next(status)))
+
 
 
 @client.event
@@ -39,14 +41,13 @@ async def clear(ctx, amount : int):
 @clear.error
 async def clear_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Please pass inan amount to clear the number of data.")
+        await ctx.send("Please pass the amount to clear the number of data.")
+
 
 
 @client.command()
 async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
-
-
 
 
 
@@ -58,10 +59,6 @@ async def links(ctx):
     await ctx.send("```View our Github Page : -``` https://github.com/c-code-x")
 
 
-# @client.command()
-# async def team(ctx):
-#     await ctx.send('App Development\n``` Jaideep \n Bharghav``` \n Competitive Coding ```\n Sayan``` \n AI/ML ```\n Srinija \n Neeraj``` \n Frontend ```\n Navya \n Madhulika``` \n Content Writting ```\n Nitisha``` \n Public Relation ```\n Manoj```')
-
 
 
 @client.command()
@@ -71,9 +68,18 @@ async def help(ctx):
 
 
 
+@client.command()
+async def load(ctx, extension):
+    client.load_exntension(f'cogs.{extension}')
+@client.command()
+async def unload(ctx, extension):
+    client.unload_exntension(f'cogs.{extension}')
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        client.load_extension(f'cogs.{filename[:-3]}')
 
 
-    
+
 
 # after we gave all the info to the bot we need to run this client (in brakets is the unique bot token)
 client.run(str(os.getenv("DISCORD_SECRET")))
