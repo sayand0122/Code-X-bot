@@ -61,9 +61,9 @@ async def links(ctx):
 
 
 
-@client.command()
+@client.command(aliases=['assist'])
 async def help(ctx):
-    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n•assist\n•ping\n•links\n•team - while giving this command add a space and then any core-team member name```")
+    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n•assist/help\n•ping\n•links\n•team 'core member name'\n•clear 'specify amount here'```")
 
 
 
