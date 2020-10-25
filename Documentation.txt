@@ -3,3 +3,29 @@
 Event - A piece of code that runs when the bot detects a specific activity ahs happened
 Command - It's a piece of code  the bot is triggered when the user asks the bot to trigger it 
 
+
+-------
+
+
+1st attempt to display details on every member was to give the prefix and type members name.
+
+For ex -            .sayan / .loganwick
+
+2nd attempt to do the same was acheived by giving .team "coreteam member name"
+
+For ex -            .team sayan / .team loganwick
+
+
+--------
+
+Added a help command to display all available commands list
+
+--------
+
+Added feature called Cogs
+
+Cogs - They allow you to organize your code and split up commands and events and organize different files etc
+
+Created a CoreTeam file and put CoreTeam details in that cog
+
+---------
