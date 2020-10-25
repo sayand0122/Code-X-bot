@@ -35,7 +35,7 @@ class coreteam(commands.Cog):
             await ctx.send('``` LinkedIn : -``` https://www.linkedin.com/in/neeraj-adityananth/')
 
         elif member=="barxhav":
-            await ctx.send("```diff\n+ Hi Bharghav here.```")
+            await ctx.send("```diff\n+ Hi Bhargav here.```")
             await ctx.send('``` My github : -``` https://github.com/bharxhav')
             await ctx.send('``` LinkedIn here : -``` https://www.linkedin.com/in/bhargavkantheti/')
 
