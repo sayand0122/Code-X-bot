@@ -28,7 +28,7 @@ class courses(commands.Cog):
             e.add_field(name='SDE',value='[SDE Problems](https://docs.google.com/document/d/1SM92efk8oDl8nyVw8NHPnbGexTS9W-1gmTEYfEurLWQ/edit)',inline=False)
             await ctx.send(embed=e)
 
-        elif message == "CP question":
+        elif message == "CP":
             e=discord.Embed(title='Competitive coding section',descripton='',color=0x107ae3)
             e.add_field(name='Series',value='[Getting Started](https://www.youtube.com/playlist?list=PL4PCksYQGLJOcaPLgeMFaxaHigPFjBuTG)',inline=False)
             e.add_field(name='Advanced Algo',value='[Recursion1](https://www.geeksforgeeks.org/recursion/)\n[Recursion2](https://www.youtube.com/playlist?list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY)\n[Stacks1](https://www.geeksforgeeks.org/stack-in-cpp-stl/)\n[Stacks2](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd)\n[DP](https://www.geeksforgeeks.org/dynamic-programming/)\n[Dynamic Programming](https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go)',inline=False)
@@ -37,7 +37,7 @@ class courses(commands.Cog):
             await ctx.send(embed=e)
 
         elif message == "frontend":
-            e=discord.Embed(title='FrontEnd - Beginning of Web-Dev',description='[HTML&CSS](https://learn.shayhowe.com/html-css/building-your-first-web-page/)\n[Total Package](https://www.w3schools.com/default.asp)\n[Jumbo Package in Hindi](https://www.youtube.com/watch?v=6mbwJ2xhgzM&list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg)',color=0xde3618)
+            e=discord.Embed(title='FrontEnd - Beginning of Web-Dev',description='[HTML & CSS](https://learn.shayhowe.com/html-css/building-your-first-web-page/)\n[Total Package](https://www.w3schools.com/default.asp)\n[Jumbo Package in Hindi](https://www.youtube.com/watch?v=6mbwJ2xhgzM&list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg)',color=0xde3618)
             e.add_field(name='HTML',value='[Videos](https://www.youtube.com/watch?v=yTHTo28hwTQ&list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F)\n[Study Material](https://www.w3schools.com/default.asp)',inline=False)
             e.add_field(name='CSS',value='[Videos](https://www.youtube.com/watch?v=yTHTo28hwTQ&list=PLgGbWId6zgaWZkPFI4Sc9QXDmmOWa1v5F)\n[Study Material](https://www.w3schools.com/css/default.asp)',inline=False)
             e.add_field(name='JavaScript',value='[Videos](https://www.youtube.com/watch?v=W6NZfCO5SIk)\n[Study Material](https://www.w3schools.com/js/default.asp)',inline=False)
@@ -55,7 +55,7 @@ class courses(commands.Cog):
     @courses.error
     async def courses_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send('```Please pass an argument from below so that you get exact results\n -beginners \n -DSA \n -CP question \n -frontend \n -ml \n```')
+            await ctx.send('```Please pass an argument from below so that you get exact results\n -beginners \n -DSA \n -CP \n -frontend \n -ml \n\n For ex - .courses ml```')
 
 
 def setup(client):

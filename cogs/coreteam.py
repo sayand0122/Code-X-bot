@@ -90,7 +90,7 @@ class coreteam(commands.Cog):
     @whois.error
     async def whois_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("Please pass the exact coreteam member name.")
+            await ctx.send(" ``` Please pass the exact coreteam member name.\n For ex - .whois srinijads```")
 
 
 def setup(client):
