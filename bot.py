@@ -73,9 +73,10 @@ async def ping(ctx):
 # links to various sites
 @client.command(aliases=['media'])
 async def links(ctx):
-    myembed = discord.Embed(title='Follow us at Instagram' , description='https://www.instagram.com/codex_gitam' , color=discord.Colour.red())
-    myembed.add_field(name='View our Github Page' , value='https://github.com/c-code-x' , inline=False)
-    myembed.add_field(name='Our Website' , value='https://google.com' , inline=False)
+    myembed = discord.Embed(title='Links to our Social sites' , description='' , color=discord.Colour.red())
+    myembed.add_field(name='Follow us at Instagram' , value='*[Instagram](https://www.instagram.com/codex_gitam "Link to our insta page")*' , inline=False)
+    myembed.add_field(name='View our Github Page' , value='*[GitHub](https://github.com/c-code-x "Link to ou github organization")*' , inline=False)
+    myembed.add_field(name='Our Website' , value='*[Website](https://google.com "Link to our Code-X website")*' , inline=False)
     await ctx.send(embed=myembed)
 
 
