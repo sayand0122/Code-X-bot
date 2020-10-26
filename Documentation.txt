@@ -31,3 +31,11 @@ Created a CoreTeam file and put CoreTeam details in that cog
 ---------
 
 Added Checks - It's given before executing any command.
+
+--------
+
+Added refernce to several courses using embeds(They are beautiful 😄)
+
+--------
+
+Finally completed with some bug fixes 😁
