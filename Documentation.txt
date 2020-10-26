@@ -29,3 +29,5 @@ Cogs - They allow you to organize your code and split up commands and events and
 Created a CoreTeam file and put CoreTeam details in that cog
 
 ---------
+
+Added Checks - It's given before executing any command.

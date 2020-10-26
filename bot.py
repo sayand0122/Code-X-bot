@@ -15,6 +15,9 @@ client.remove_command('help')
 status = cycle(['Bored in the House','Listening to Bad Guy by Billie Eilish','Type commands to see how I function😁','Working on my own code','Stay Safe','College life is Chill'])
 
 
+
+
+
 # its a function decorator that denotes the function is going to represent an event
 @client.event
 # its an asynchronous function
@@ -25,17 +28,29 @@ async def on_ready():
 
 
 
-@tasks.loop(minutes=30)
+
+
+
+# changes the game activity of bot every 30 mins
+@tasks.loop(seconds=30)
 async def change_status():
     await client.change_presence(status=discord.Status.online, activity=discord.Game(next(status)))
 
 
 
+
+
+# errors handling
 @client.event
 async def on_command_error(ctx, error):
-    if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Please pass in all required arguements.")
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send('Inavlid Command used.')
+
+
+
+# clear commands and its error handling
 @client.command()
+@commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount : int):
     await ctx.channel.purge(limit = amount)
 @clear.error
@@ -45,29 +60,35 @@ async def clear_error(ctx, error):
 
 
 
+
+
+# ping it and it returns your latency
 @client.command()
 async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency * 1000)}ms')
 
 
 
-# we use parenthesis her coz there are couple of commands we want to change for example we want specific commands to be hidden from user
+
+# links to various sites
 @client.command(aliases=['media'])
 async def links(ctx):
-    await ctx.send("```Follow us at Instagram : -``` https://www.instagram.com/codex_gitam")
-    await ctx.send("```Catchup with us on our website : -``` ")
-    await ctx.send("```View our Github Page : -``` https://github.com/c-code-x")
+    myembed = discord.Embed(title='Follow us at Instagram' , description='https://www.instagram.com/codex_gitam' , color=discord.Colour.red())
+    myembed.add_field(name='View our Github Page' , value='https://github.com/c-code-x' , inline=False)
+    myembed.add_field(name='Our Website' , value='https://google.com' , inline=False)
+    await ctx.send(embed=myembed)
 
 
 
 
+# help command
 @client.command(aliases=['assist'])
 async def help(ctx):
-    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n•assist/help\n•ping\n•links\n•team 'core member name'\n•clear 'specify amount here'```")
+    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n•assist/help\n•ping\n•links\n•whois 'exact core-member name'\n•clear 'specify amount here'```")
 
 
 
-
+# maintaining cogs
 @client.command()
 async def load(ctx, extension):
     client.load_exntension(f'cogs.{extension}')
