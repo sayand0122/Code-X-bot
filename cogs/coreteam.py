@@ -19,9 +19,10 @@ class coreteam(commands.Cog):
     async def whois(self, ctx, member : discord.Member):
         if member.nick == "Sayan":
             e = discord.Embed(title = member.nick , description = 'Heya guys nice to meet you all. I am Sayan and we can have lots of fun together' , color = 0x140ec7)
-            e.add_field(name='My projects expo',value=' https://github.com/sayand0122',inline=False)
+            e.add_field(name='My projects bundle',value=' https://github.com/sayand0122',inline=False)
             e.add_field(name='Socialization spot',value='https://www.linkedin.com/in/sayan-dutta-117a8a1a8/',inline=False)
             e.set_thumbnail(url=member.avatar_url)
+            e.set_footer(icon_url=ctx.author.avatar_url, text=f'Requested by {ctx.author.name}')
             await ctx.send(embed=e)
         
         elif member.name=="Loganwick":
