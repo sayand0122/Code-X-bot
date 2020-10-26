@@ -44,7 +44,7 @@ async def change_status():
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send('Inavlid Command used.')
+        await ctx.send('```Inavlid Command used.```')
 
 
 
