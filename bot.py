@@ -85,7 +85,7 @@ async def links(ctx):
 # help command
 @client.command(aliases=['assist'])
 async def help(ctx):
-    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n• .help/.assist\n• .ping \n• .links \n• .whois 'exact core-member name' \n• .clear 'specify amount here \n• .courses \n• .courses 'exact domain name''```")
+    await ctx.send("```Note - Type the prefix '.' before every command```\n```List of commands\n• .help/.assist\n• .ping \n• .links \n• .whois 'exact core-member name' \n• .clear 'specify amount here' \n• .courses \n• .courses 'exact domain name'```")
 
 
 
