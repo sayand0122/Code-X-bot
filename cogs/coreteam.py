@@ -90,7 +90,7 @@ class coreteam(commands.Cog):
             e.set_thumbnail(url=member.avatar_url)
             await ctx.send(embed=e)
 
-        elif member.name == "Dark Quill":
+        elif member.name == "DarkQuill":
             e = discord.Embed(
                 title=member.name, description="Hi guys nice to meet you all. I am Nishitha", color=0xdb6714)
             e.add_field(name='Link to my LinkedIn',
